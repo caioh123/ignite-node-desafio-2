@@ -29,16 +29,16 @@ Adicionar o tipo de plano do usuário no desafio anterior por meio de middleware
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/Thifany-Nicastro/IgniteNode-ChapterI-Desafio02.git
+$ git clone https://github.com/caioh123/ignite-node-desafio-2.git
 
 # Entre na pasta
-$ cd IgniteNode-ChapterI-Desafio02
+$ cd ignite-node-desafio-2
 
 # Instale as dependências
-$ yarn ou yarn install
+$ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ yarn dev
+$ npm run dev
 
 # O servidor inciará na porta:3333
 acesse <http://localhost:3333>
