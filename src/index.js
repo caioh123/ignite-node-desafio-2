@@ -45,15 +45,15 @@ function checksTodoExists(request, response, next) {
     return response.status(404).json({error: "user does not exists"})
   }
 
+  if(!validate(id)) {
+    return response.status(400).json({error: "ID provided is not a valid ID"})
+  }
+
   const todo = user.todos.find((todo) => todo.id === id)
 
   if(!todo) {
     return response.status(404).json({ error: "User's todo not found." });
   }  
-
-  if(!validate(id)) {
-    return response.status(404).json({error: "ID provided is not a valid ID"})
-  }
 
   request.todo = todo
   request.user = user
@@ -63,7 +63,16 @@ function checksTodoExists(request, response, next) {
 }
 
 function findUserById(request, response, next) {
-  // Complete aqui
+  const {id} = request.params
+
+  const user = users.find((user) => user.id === id)
+
+  if(!user) {
+    return response.status(404).json({error: "User not found"})
+  }
+
+  request.user = user
+  return next()
 }
 
 app.post('/users', (request, response) => {
